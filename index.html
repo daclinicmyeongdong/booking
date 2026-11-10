@@ -260,6 +260,8 @@
       timeLabel: '시간',
       timeHint: '평일 10시~21시, 주말 10시~19시 (공휴일은 17시까지)',
       slotFull: '마감',
+      companionLabel: '함께 오시는 분이 있나요?', companionPh: '선택해주세요',
+      companion: { none: '혼자 방문해요', one: '동반 1명', two: '동반 2명', three: '동반 3명 이상' },
       firstAvailableLabel: '예약 가능한 첫 날짜',
       infoTitle: '방문하실 분 정보를 알려주세요',
       infoSub: '예약 확인 연락을 드릴 때 사용해요.',
@@ -278,7 +280,7 @@
       sameAsContact: '위에 적은 연락처로 받을게요',
       reviewTitle: '이대로 예약할까요?', reviewSub: '',
       editLabel: '수정',
-      reviewVisit: '방문 구분', reviewService: '희망 시술', reviewDoctor: '원장님', reviewDateTime: '날짜·시간',
+      reviewVisit: '방문 구분', reviewService: '희망 시술', reviewDoctor: '원장님', reviewDateTime: '날짜·시간', reviewCompanion: '동반 인원',
       reviewReferral: '알게 된 경로', reviewName: '이름', reviewBirth: '생년월일', reviewGender: '성별',
       reviewContact: '연락처', reviewNationality: '국적', reviewForeign: '통역', reviewChannel: '안내 받을 곳',
       nextBtn: '다음', backBtn: '이전',
@@ -322,6 +324,8 @@
       timeLabel: 'Time',
       timeHint: 'Weekdays 10am–9pm, weekends 10am–7pm (public holidays until 5pm)',
       slotFull: 'Full',
+      companionLabel: 'Is anyone coming with you?', companionPh: 'Please select',
+      companion: { none: 'Just me', one: '+1 companion', two: '+2 companions', three: '+3 or more companions' },
       firstAvailableLabel: 'First available date',
       infoTitle: 'A few details about you',
       infoSub: "We'll use these to confirm your visit.",
@@ -340,7 +344,7 @@
       sameAsContact: 'Same as the contact above',
       reviewTitle: 'Does this look right?', reviewSub: '',
       editLabel: 'Edit',
-      reviewVisit: 'Visit type', reviewService: 'Desired treatment', reviewDoctor: 'Preferred doctor', reviewDateTime: 'Schedule',
+      reviewVisit: 'Visit type', reviewService: 'Desired treatment', reviewDoctor: 'Preferred doctor', reviewDateTime: 'Schedule', reviewCompanion: 'Companions',
       reviewReferral: 'How you found us', reviewName: 'Name', reviewBirth: 'Date of birth', reviewGender: 'Gender',
       reviewContact: 'Contact', reviewNationality: 'Nationality', reviewForeign: 'Passport / interpreter', reviewChannel: 'Contact channel',
       nextBtn: 'Next', backBtn: 'Back',
@@ -384,6 +388,8 @@
       timeLabel: '時間',
       timeHint: '平日 10:00–21:00 · 週末 10:00–19:00(祝日は17:00まで)',
       slotFull: '満席',
+      companionLabel: '同伴者はいらっしゃいますか?', companionPh: '選択してください',
+      companion: { none: '一人で来院', one: '同伴者 1名', two: '同伴者 2名', three: '同伴者 3名以上' },
       firstAvailableLabel: '予約可能な最初の日付',
       infoTitle: '予約者情報',
       infoSub: 'ご来院経路と予約者情報をご入力ください。',
@@ -402,7 +408,7 @@
       sameAsContact: '上記の連絡先と同じものを使用',
       reviewTitle: '予約内容をご確認ください', reviewSub: '',
       editLabel: '変更する',
-      reviewVisit: '来院区分', reviewService: 'ご希望の施術', reviewDoctor: '指定ドクター', reviewDateTime: '日程',
+      reviewVisit: '来院区分', reviewService: 'ご希望の施術', reviewDoctor: '指定ドクター', reviewDateTime: '日程', reviewCompanion: '同伴者',
       reviewReferral: 'ご来院経路', reviewName: 'お名前', reviewBirth: '生年月日', reviewGender: '性別',
       reviewContact: '連絡先', reviewNationality: '国籍', reviewForeign: 'パスポート・通訳', reviewChannel: '連絡チャンネル',
       nextBtn: '次へ', backBtn: '戻る',
@@ -446,6 +452,8 @@
       timeLabel: '时间',
       timeHint: '工作日 10:00–21:00 · 周末 10:00–19:00(公休日至17:00)',
       slotFull: '已满',
+      companionLabel: '是否有同行人员?', companionPh: '请选择',
+      companion: { none: '一个人来', one: '同行 1人', two: '同行 2人', three: '同行 3人及以上' },
       firstAvailableLabel: '最早可预约日期',
       infoTitle: '预约人信息',
       infoSub: '请填写到访途径与预约人信息。',
@@ -464,7 +472,7 @@
       sameAsContact: '与上方联系方式相同',
       reviewTitle: '请确认预约信息', reviewSub: '',
       editLabel: '修改',
-      reviewVisit: '就诊类型', reviewService: '希望的项目', reviewDoctor: '指定院长', reviewDateTime: '预约时间',
+      reviewVisit: '就诊类型', reviewService: '希望的项目', reviewDoctor: '指定院长', reviewDateTime: '预约时间', reviewCompanion: '同行人员',
       reviewReferral: '到访途径', reviewName: '姓名', reviewBirth: '出生日期', reviewGender: '性别',
       reviewContact: '联系方式', reviewNationality: '国籍', reviewForeign: '护照·翻译', reviewChannel: '接收渠道',
       nextBtn: '下一步', backBtn: '返回',
@@ -533,7 +541,7 @@
 
   function freshForm() {
     return {
-      visitType: '', service: '', doctor: '', date: '', time: '',
+      visitType: '', service: '', doctor: '', date: '', time: '', companion: '',
       foreign: false, passportNo: '', interpreter: false,
       referral: '', name: '', birth: '', gender: '', contact: '', nationality: '',
       channel: '', channelId: '', sameAsContact: false,
@@ -556,6 +564,15 @@
   };
 
   var slotReq = 0;
+
+  // 한 시간대에 받을 수 있는 예약 건수 (예약받기 Code.gs의 SLOT_CAPACITY와 같게)
+  var SLOT_CAPACITY = 3;
+  var COMPANION_KEYS = ['none', 'one', 'two', 'three'];
+  function bookedCount(time) {
+    var n = 0;
+    state.dateBooked.forEach(function (b) { if (b === time) n++; });
+    return n;
+  }
 
   function t() { return T[state.lang] || T.ko; }
 
@@ -734,6 +751,13 @@
 
     body += '<label class="field">' + esc(tt.doctorLabel) + '<input type="text" id="f-doctor" value="' + esc(f.doctor) + '" placeholder="' + esc(tt.doctorPh) + '">' + (tt.doctorHint ? '<span class="hint">' + esc(tt.doctorHint) + '</span>' : '') + '</label>';
 
+    body += '<label class="field">' + esc(tt.companionLabel) + '<select id="f-companion">';
+    body += '<option value="">' + esc(tt.companionPh) + '</option>';
+    COMPANION_KEYS.forEach(function (k) {
+      body += '<option value="' + k + '"' + (f.companion === k ? ' selected' : '') + '>' + esc(tt.companion[k]) + '</option>';
+    });
+    body += '</select></label>';
+
     body += '<div class="field">' + esc(tt.dateLabel) + calendarHtml() + '</div>';
 
     body += '<div class="field">' + esc(tt.timeLabel) + '<div class="hint" style="margin-bottom:2px;">' + esc(tt.timeHint) + '</div>';
@@ -743,7 +767,7 @@
       body += '<div class="slot-grid">';
       var nowHour = f.date === todayISO() ? new Date().getHours() : -1;
       getSlotsForDate(f.date).forEach(function (s) {
-        var full = state.dateBooked.indexOf(s) !== -1 || parseInt(s, 10) <= nowHour;
+        var full = bookedCount(s) >= SLOT_CAPACITY || parseInt(s, 10) <= nowHour;
         var sel = f.time === s;
         body += '<button type="button" class="slot' + (sel ? ' selected' : '') + '" data-slot="' + s + '"' + (full ? ' disabled' : '') + '>' + s + (full ? '<br><small>' + esc(tt.slotFull) + '</small>' : '') + '</button>';
       });
@@ -756,6 +780,7 @@
 
     app.querySelector('#f-service').addEventListener('change', function (e) { f.service = e.target.value; });
     app.querySelector('#f-doctor').addEventListener('input', function (e) { f.doctor = e.target.value; });
+    app.querySelector('#f-companion').addEventListener('change', function (e) { f.companion = e.target.value; });
 
     var prevBtn = app.querySelector('#cal-prev');
     if (prevBtn) prevBtn.addEventListener('click', function () {
@@ -786,7 +811,7 @@
     });
     app.querySelector('#btn-back').addEventListener('click', function () { goStep(1); });
     app.querySelector('#btn-next').addEventListener('click', function () {
-      if (!f.service || !f.date || !f.time) { state.error = tt.requiredError; render(); return; }
+      if (!f.service || !f.companion || !f.date || !f.time) { state.error = tt.requiredError; render(); return; }
       goStep(3);
     });
 
@@ -884,6 +909,7 @@
     body += reviewRow(tt.reviewVisit, f.visitType === 'first' ? tt.visitFirst : tt.visitReturning);
     body += reviewRow(tt.reviewService, tt.services[f.service] || f.service);
     body += reviewRow(tt.reviewDoctor, f.doctor ? f.doctor : tt.none);
+    body += reviewRow(tt.reviewCompanion, tt.companion[f.companion] || f.companion);
     body += reviewRow(tt.reviewDateTime, formatDateDisplay(state.lang, f.date) + ' ' + f.time);
     body += '</div></div>';
 
@@ -929,6 +955,7 @@
       contact: f.contact.trim(),
       service: ko.services[f.service] || f.service,
       doctor: (f.doctor || '').trim(),
+      companions: ko.companion[f.companion] || f.companion,
       visitType: f.visitType === 'first' ? '초진' : '재진',
       referral: ko.referral[f.referral] || f.referral,
       birth: f.birth,
