@@ -250,6 +250,8 @@
       visitSub: '',
       visitFirst: '처음이에요', visitFirstSub: '초진',
       visitReturning: '방문한 적 있어요', visitReturningSub: '재진',
+      purposeLabel: '예약 종류', purposeConsult: '상담 예약', purposeConsultSub: '상담실장과 상담 후 결정해요', purposeProcedure: '시술 예약', purposeProcedureSub: '받을 시술이 정해졌어요',
+      firstVisitNote: '처음 방문하시는 분은 상담 예약으로 접수돼요.',
       scheduleTitle: '언제, 어떤 시술로 오시나요?',
       scheduleSub: '시술이 아직 정해지지 않았다면 \'전반적인 상담\'을 골라주세요.',
       serviceLabel: '희망 시술', servicePh: '선택해주세요',
@@ -258,7 +260,10 @@
       doctorHint: '',
       dateLabel: '날짜', calPickFirst: '날짜를 먼저 골라주세요',
       timeLabel: '시간',
-      timeHint: '평일 10시~21시, 주말 10시~19시 (공휴일은 17시까지)',
+      timeHintConsult: '상담 예약: 평일 20:00 · 주말 18:00 · 공휴일 16:00까지 (30분 단위)',
+      timeHintProcedure: '시술 예약: 평일 19:00 · 주말 17:00 · 공휴일 15:00까지 (30분 단위)',
+      dateHint: '오늘부터 31일 이내 날짜만 예약할 수 있어요.',
+      lateConsultNote: '상담실장과 상담 후 당일 시술 예약 상황에 따라 시술 여부가 결정되며, 상담만 가능할 수 있습니다.',
       slotFull: '마감',
       companionLabel: '함께 오시는 분이 있나요?', companionPh: '선택해주세요',
       companion: { none: '혼자 방문해요', one: '동반 1명', two: '동반 2명', three: '동반 3명 이상' },
@@ -280,6 +285,7 @@
       sameAsContact: '위에 적은 연락처로 받을게요',
       reviewTitle: '이대로 예약할까요?', reviewSub: '',
       editLabel: '수정',
+      reviewPurpose: '예약 종류',
       reviewVisit: '방문 구분', reviewService: '희망 시술', reviewDoctor: '원장님', reviewDateTime: '날짜·시간', reviewCompanion: '동반 인원',
       reviewReferral: '알게 된 경로', reviewName: '이름', reviewBirth: '생년월일', reviewGender: '성별',
       reviewContact: '연락처', reviewNationality: '국적', reviewForeign: '통역', reviewChannel: '안내 받을 곳',
@@ -287,6 +293,7 @@
       finalSubmitBtn: '예약 신청', submitting: '신청하는 중…',
       requiredError: '아직 비어 있는 칸이 있어요.',
       slotTakenError: '아쉽게도 그 시간은 방금 다른 분이 예약했어요. 다른 시간을 골라주세요.',
+      duplicateError: '같은 연락처로 같은 시간에 이미 접수된 예약이 있어요.',
       noDbError: '지금은 온라인 예약을 받을 수 없어요. 번거로우시겠지만 02-757-0126으로 전화 부탁드려요.',
       submitError: '신청이 전송되지 않았어요. 잠시 후 다시 시도하시거나 02-757-0126으로 연락 주세요.',
       consentCheck: '[필수] 개인정보 수집·이용에 동의합니다',
@@ -314,6 +321,8 @@
       visitSub: '',
       visitFirst: "It's my first time", visitFirstSub: 'New patient',
       visitReturning: "I've been here before", visitReturningSub: 'Returning patient',
+      purposeLabel: 'Booking type', purposeConsult: 'Consultation', purposeConsultSub: 'Talk with our consultant first', purposeProcedure: 'Treatment', purposeProcedureSub: 'I know which treatment I want',
+      firstVisitNote: 'First visits are booked as a consultation.',
       scheduleTitle: 'What and when?',
       scheduleSub: "Not sure yet? Pick 'General Consultation'.",
       serviceLabel: 'Desired treatment', servicePh: 'Select a treatment',
@@ -322,7 +331,10 @@
       doctorHint: '',
       dateLabel: 'Date', calPickFirst: 'Please select a date first',
       timeLabel: 'Time',
-      timeHint: 'Weekdays 10am–9pm, weekends 10am–7pm (public holidays until 5pm)',
+      timeHintConsult: 'Consultation: until 8pm weekdays · 6pm weekends · 4pm public holidays (30-min slots)',
+      timeHintProcedure: 'Treatment: until 7pm weekdays · 5pm weekends · 3pm public holidays (30-min slots)',
+      dateHint: 'You can book up to 31 days ahead, including today.',
+      lateConsultNote: "After your consultation, whether you can have a treatment that day depends on the day's treatment bookings. It may be a consultation only.",
       slotFull: 'Full',
       companionLabel: 'Is anyone coming with you?', companionPh: 'Please select',
       companion: { none: 'Just me', one: '+1 companion', two: '+2 companions', three: '+3 or more companions' },
@@ -344,6 +356,7 @@
       sameAsContact: 'Same as the contact above',
       reviewTitle: 'Does this look right?', reviewSub: '',
       editLabel: 'Edit',
+      reviewPurpose: 'Booking type',
       reviewVisit: 'Visit type', reviewService: 'Desired treatment', reviewDoctor: 'Preferred doctor', reviewDateTime: 'Schedule', reviewCompanion: 'Companions',
       reviewReferral: 'How you found us', reviewName: 'Name', reviewBirth: 'Date of birth', reviewGender: 'Gender',
       reviewContact: 'Contact', reviewNationality: 'Nationality', reviewForeign: 'Passport / interpreter', reviewChannel: 'Contact channel',
@@ -351,6 +364,7 @@
       finalSubmitBtn: 'Request booking', submitting: 'Sending…',
       requiredError: 'A few fields are still empty.',
       slotTakenError: 'Sorry, someone just took that time. Please pick another.',
+      duplicateError: 'There is already a booking with this contact at the same time.',
       noDbError: "Online booking isn't available right now. Please call us at +82-2-757-0126.",
       submitError: "Your request didn't go through. Please try again shortly or call +82-2-757-0126.",
       consentCheck: '[Required] I agree to the collection and use of my personal information',
@@ -378,6 +392,8 @@
       visitSub: '',
       visitFirst: '初診', visitFirstSub: '初めて来院します',
       visitReturning: '再診', visitReturningSub: '来院したことがあります',
+      purposeLabel: '予約の種類', purposeConsult: 'カウンセリング予約', purposeConsultSub: 'カウンセラーと相談して決めたい', purposeProcedure: '施術予約', purposeProcedureSub: '受けたい施術が決まっています',
+      firstVisitNote: '初診の方はカウンセリング予約として承ります。',
       scheduleTitle: '施術・日程',
       scheduleSub: '施術が決まっていない方は「全般相談」をお選びください。',
       serviceLabel: 'ご希望の施術', servicePh: '選択してください',
@@ -386,7 +402,10 @@
       doctorHint: '',
       dateLabel: '日付', calPickFirst: '先に日付を選択してください',
       timeLabel: '時間',
-      timeHint: '平日 10:00–21:00 · 週末 10:00–19:00(祝日は17:00まで)',
+      timeHintConsult: 'カウンセリング: 平日20:00・週末18:00・祝日16:00まで(30分単位)',
+      timeHintProcedure: '施術: 平日19:00・週末17:00・祝日15:00まで(30分単位)',
+      dateHint: '本日を含め31日以内の日付のみご予約いただけます。',
+      lateConsultNote: 'カウンセリング後、当日の施術予約状況によって施術の可否が決まります。カウンセリングのみとなる場合があります。',
       slotFull: '満席',
       companionLabel: '同伴者はいらっしゃいますか?', companionPh: '選択してください',
       companion: { none: '一人で来院', one: '同伴者 1名', two: '同伴者 2名', three: '同伴者 3名以上' },
@@ -408,6 +427,7 @@
       sameAsContact: '上記の連絡先と同じものを使用',
       reviewTitle: '予約内容をご確認ください', reviewSub: '',
       editLabel: '変更する',
+      reviewPurpose: '予約の種類',
       reviewVisit: '来院区分', reviewService: 'ご希望の施術', reviewDoctor: '指定ドクター', reviewDateTime: '日程', reviewCompanion: '同伴者',
       reviewReferral: 'ご来院経路', reviewName: 'お名前', reviewBirth: '生年月日', reviewGender: '性別',
       reviewContact: '連絡先', reviewNationality: '国籍', reviewForeign: 'パスポート・通訳', reviewChannel: '連絡チャンネル',
@@ -415,6 +435,7 @@
       finalSubmitBtn: '予約を申し込む', submitting: '送信中…',
       requiredError: '必須項目をすべて入力してください。',
       slotTakenError: '選択した時間は先ほど埋まりました。別の時間をお選びください。',
+      duplicateError: '同じ連絡先で同じ時間のご予約がすでにあります。',
       noDbError: '現在オンライン予約をご利用いただけません。お手数ですが +82-2-757-0126 までお電話ください。',
       submitError: '送信できませんでした。しばらくしてから再度お試しいただくか、+82-2-757-0126 までお電話ください。',
       consentCheck: '[必須] 個人情報の収集・利用に同意します',
@@ -442,6 +463,8 @@
       visitSub: '',
       visitFirst: '初诊', visitFirstSub: '第一次到访',
       visitReturning: '复诊', visitReturningSub: '之前到访过',
+      purposeLabel: '预约类型', purposeConsult: '咨询预约', purposeConsultSub: '先与咨询师沟通再决定', purposeProcedure: '项目预约', purposeProcedureSub: '已确定想做的项目',
+      firstVisitNote: '初诊客人将按咨询预约受理。',
       scheduleTitle: '项目 · 时间',
       scheduleSub: '还没想好项目的话，可以选择“综合咨询”。',
       serviceLabel: '希望的项目', servicePh: '请选择',
@@ -450,7 +473,10 @@
       doctorHint: '',
       dateLabel: '日期', calPickFirst: '请先选择日期',
       timeLabel: '时间',
-      timeHint: '工作日 10:00–21:00 · 周末 10:00–19:00(公休日至17:00)',
+      timeHintConsult: '咨询: 工作日至20:00 · 周末至18:00 · 公休日至16:00(每30分钟)',
+      timeHintProcedure: '项目: 工作日至19:00 · 周末至17:00 · 公休日至15:00(每30分钟)',
+      dateHint: '仅可预约包括今天在内31天以内的日期。',
+      lateConsultNote: '咨询后将根据当天的项目预约情况决定能否进行项目，也可能仅提供咨询。',
       slotFull: '已满',
       companionLabel: '是否有同行人员?', companionPh: '请选择',
       companion: { none: '一个人来', one: '同行 1人', two: '同行 2人', three: '同行 3人及以上' },
@@ -472,6 +498,7 @@
       sameAsContact: '与上方联系方式相同',
       reviewTitle: '请确认预约信息', reviewSub: '',
       editLabel: '修改',
+      reviewPurpose: '预约类型',
       reviewVisit: '就诊类型', reviewService: '希望的项目', reviewDoctor: '指定院长', reviewDateTime: '预约时间', reviewCompanion: '同行人员',
       reviewReferral: '到访途径', reviewName: '姓名', reviewBirth: '出生日期', reviewGender: '性别',
       reviewContact: '联系方式', reviewNationality: '国籍', reviewForeign: '护照·翻译', reviewChannel: '接收渠道',
@@ -479,6 +506,7 @@
       finalSubmitBtn: '提交预约', submitting: '提交中…',
       requiredError: '请填写所有必填项。',
       slotTakenError: '该时段刚被预约，请选择其他时间。',
+      duplicateError: '该联系方式在同一时间已有预约。',
       noDbError: '暂时无法在线预约，请致电 +82-2-757-0126。',
       submitError: '提交失败，请稍后重试，或致电 +82-2-757-0126。',
       consentCheck: '[必选] 同意收集和使用个人信息',
@@ -498,15 +526,52 @@
     }
   };
 
-  // Mon-Fri 10:00-21:00, Sat-Sun 10:00-19:00 (last 1-hour slot starts an hour before close).
-  function getSlotsForDate(dateStr) {
+  // 예약 규칙 (예약받기 Code.gs의 LAST_START·HOLIDAYS·BOOKING_DAYS와 같게)
+  // 10:00부터 30분 단위, 마지막 예약 시작 시각(분)은 아래와 같습니다.
+  var OPEN_MIN = 10 * 60;
+  var LAST_START = {
+    weekday: { consult: 20 * 60, procedure: 19 * 60 },
+    weekend: { consult: 18 * 60, procedure: 17 * 60 },
+    holiday: { consult: 16 * 60, procedure: 15 * 60 }
+  };
+  var BOOKING_DAYS = 31; // 오늘 포함
+  var HOLIDAYS = [
+    '2026-12-25',
+    '2027-01-01', '2027-02-06', '2027-02-07', '2027-02-08', '2027-02-09', '2027-03-01', '2027-05-01', '2027-05-03',
+    '2027-05-05', '2027-05-13', '2027-06-06', '2027-07-17', '2027-07-19', '2027-08-15', '2027-08-16', '2027-09-14',
+    '2027-09-15', '2027-09-16', '2027-10-03', '2027-10-04', '2027-10-09', '2027-10-11', '2027-12-25', '2027-12-27'
+  ];
+
+  function toMin(hhmm) { var p = String(hhmm).split(':'); return Number(p[0]) * 60 + Number(p[1] || 0); }
+  function fromMin(m) { return pad2(Math.floor(m / 60)) + ':' + pad2(m % 60); }
+
+  function dayKind(dateStr) {
+    // 서버가 알려준 공휴일 여부(임시공휴일 포함)가 있으면 그걸 우선합니다.
+    var holiday = (state.dateHolidayFor === dateStr && state.dateHoliday !== null) ? state.dateHoliday : HOLIDAYS.indexOf(dateStr) !== -1;
+    if (holiday) return 'holiday';
+    var day = new Date(dateStr + 'T00:00:00').getDay();
+    return (day === 0 || day === 6) ? 'weekend' : 'weekday';
+  }
+
+  function purposeOf(f) { return f.visitType === 'first' ? 'consult' : f.purpose; }
+
+  function getSlotsForDate(dateStr, purpose) {
     if (!dateStr) return [];
-    var day = new Date(dateStr + 'T00:00:00').getDay(); // 0 Sun .. 6 Sat
-    var isWeekend = (day === 0 || day === 6);
-    var lastStartHour = isWeekend ? 18 : 20;
+    var last = LAST_START[dayKind(dateStr)][purpose || 'consult'];
     var slots = [];
-    for (var h = 10; h <= lastStartHour; h++) slots.push((h < 10 ? '0' + h : '' + h) + ':00');
+    for (var m = OPEN_MIN; m <= last; m += 30) slots.push(fromMin(m));
     return slots;
+  }
+
+  // 시술 예약 마감 뒤의 상담 시간인지
+  function isLateConsult(f) {
+    return purposeOf(f) === 'consult' && f.date && f.time && toMin(f.time) > LAST_START[dayKind(f.date)].procedure;
+  }
+
+  function maxDateISO() {
+    var d = new Date();
+    d.setDate(d.getDate() + BOOKING_DAYS - 1);
+    return d.getFullYear() + '-' + pad2(d.getMonth() + 1) + '-' + pad2(d.getDate());
   }
 
   function pad2(n) { return n < 10 ? '0' + n : '' + n; }
@@ -541,7 +606,7 @@
 
   function freshForm() {
     return {
-      visitType: '', service: '', doctor: '', date: '', time: '', companion: '',
+      visitType: '', purpose: '', service: '', doctor: '', date: '', time: '', companion: '',
       foreign: false, passportNo: '', interpreter: false,
       referral: '', name: '', birth: '', gender: '', contact: '', nationality: '',
       channel: '', channelId: '', sameAsContact: false,
@@ -558,6 +623,8 @@
     calendar: { year: todayParts.y, month: todayParts.m },
     form: freshForm(),
     dateBooked: [],
+    dateHoliday: null,
+    dateHolidayFor: '',
     submitting: false,
     error: '',
     lastBooking: null
@@ -565,7 +632,7 @@
 
   var slotReq = 0;
 
-  // 한 시간대에 받을 수 있는 예약 건수 (예약받기 Code.gs의 SLOT_CAPACITY와 같게)
+  // 30분 시간대 하나에 받을 수 있는 예약 건수(상담+시술 합계). 예약받기 Code.gs의 SLOT_CAPACITY와 같게
   var SLOT_CAPACITY = 3;
   var COMPANION_KEYS = ['none', 'one', 'two', 'three'];
   function bookedCount(time) {
@@ -649,6 +716,8 @@
 
   function subscribeDate(dateStr) {
     state.dateBooked = [];
+    state.dateHoliday = null;
+    state.dateHolidayFor = dateStr;
     if (!SHEET_API_URL || !dateStr) return;
     var req = ++slotReq;
     fetch(SHEET_API_URL + '?action=slots&date=' + encodeURIComponent(dateStr))
@@ -656,6 +725,9 @@
       .then(function (res) {
         if (req !== slotReq || !res || !res.ok) return;
         state.dateBooked = res.booked || [];
+        if (typeof res.holiday === 'boolean') state.dateHoliday = res.holiday;
+        var f = state.form;
+        if (f.time && getSlotsForDate(f.date, purposeOf(f)).indexOf(f.time) === -1) f.time = '';
         if (state.view === 'book' && state.bookStep === 2) render();
       })
       .catch(function () { /* slots just show as available; the sheet re-checks on submit */ });
@@ -699,19 +771,41 @@
     body += '<button type="button" class="radio-card' + (f.visitType === 'first' ? ' selected' : '') + '" data-visit="first"><span class="t">' + esc(tt.visitFirst) + '</span><span class="s">' + esc(tt.visitFirstSub) + '</span></button>';
     body += '<button type="button" class="radio-card' + (f.visitType === 'returning' ? ' selected' : '') + '" data-visit="returning"><span class="t">' + esc(tt.visitReturning) + '</span><span class="s">' + esc(tt.visitReturningSub) + '</span></button>';
     body += '</div>';
+    if (f.visitType === 'first') {
+      body += '<div class="hint" style="margin-top:10px;">' + esc(tt.firstVisitNote) + '</div>';
+    } else if (f.visitType === 'returning') {
+      body += '<div class="field" style="margin-top:16px;">' + esc(tt.purposeLabel) + '<div class="radio-grid">';
+      body += '<button type="button" class="radio-card' + (f.purpose === 'consult' ? ' selected' : '') + '" data-purpose="consult"><span class="t">' + esc(tt.purposeConsult) + '</span><span class="s">' + esc(tt.purposeConsultSub) + '</span></button>';
+      body += '<button type="button" class="radio-card' + (f.purpose === 'procedure' ? ' selected' : '') + '" data-purpose="procedure"><span class="t">' + esc(tt.purposeProcedure) + '</span><span class="s">' + esc(tt.purposeProcedureSub) + '</span></button>';
+      body += '</div></div>';
+    }
     var nav = '<div class="btn-row"><button class="btn btn-ghost" id="btn-back-lang">' + esc(tt.backBtn) + '</button><button class="btn btn-primary" id="btn-next">' + esc(tt.nextBtn) + '</button></div>';
     app.innerHTML = cardShell(1, tt.visitTitle, tt.visitSub, body, nav);
 
     Array.prototype.forEach.call(app.querySelectorAll('[data-visit]'), function (btn) {
-      btn.addEventListener('click', function () { f.visitType = btn.getAttribute('data-visit'); render(); });
+      btn.addEventListener('click', function () {
+        f.visitType = btn.getAttribute('data-visit');
+        if (f.visitType === 'first') f.purpose = '';
+        dropInvalidTime();
+        render();
+      });
+    });
+    Array.prototype.forEach.call(app.querySelectorAll('[data-purpose]'), function (btn) {
+      btn.addEventListener('click', function () { f.purpose = btn.getAttribute('data-purpose'); dropInvalidTime(); render(); });
     });
     app.querySelector('#btn-back-lang').addEventListener('click', function () {
       state.view = 'lang'; state.lang = null; render();
     });
     app.querySelector('#btn-next').addEventListener('click', function () {
-      if (!f.visitType) { state.error = tt.requiredError; render(); return; }
+      if (!f.visitType || !purposeOf(f)) { state.error = tt.requiredError; render(); return; }
       goStep(2);
     });
+  }
+
+  // 예약 종류가 바뀌어 고른 시간이 더 이상 가능하지 않으면 비웁니다.
+  function dropInvalidTime() {
+    var f = state.form;
+    if (f.time && getSlotsForDate(f.date, purposeOf(f)).indexOf(f.time) === -1) f.time = '';
   }
 
   function calendarHtml() {
@@ -722,14 +816,16 @@
     var totalDays = new Date(y, m + 1, 0).getDate();
     var todayStr = todayISO();
     var atCurrentMonth = (y === todayParts.y && m === todayParts.m);
+    var maxStr = maxDateISO();
+    var atLastMonth = (y + '-' + pad2(m + 1)) >= maxStr.slice(0, 7);
     var html = '<div>';
-    html += '<div class="cal-head"><button type="button" id="cal-prev"' + (atCurrentMonth ? ' disabled' : '') + '>&#8249;</button><span class="cal-title">' + esc(monthTitle(lang, y, m)) + '</span><button type="button" id="cal-next">&#8250;</button></div>';
+    html += '<div class="cal-head"><button type="button" id="cal-prev"' + (atCurrentMonth ? ' disabled' : '') + '>&#8249;</button><span class="cal-title">' + esc(monthTitle(lang, y, m)) + '</span><button type="button" id="cal-next"' + (atLastMonth ? ' disabled' : '') + '>&#8250;</button></div>';
     html += '<div class="cal-grid">';
     WEEKDAYS[lang].forEach(function (w) { html += '<div class="cal-wd">' + esc(w) + '</div>'; });
     for (var i = 0; i < firstWd; i++) html += '<div class="cal-day empty"></div>';
     for (var d = 1; d <= totalDays; d++) {
       var ds = y + '-' + pad2(m + 1) + '-' + pad2(d);
-      var disabled = ds < todayStr;
+      var disabled = ds < todayStr || ds > maxStr;
       var selected = state.form.date === ds;
       html += '<button type="button" class="cal-day' + (disabled ? ' disabled' : '') + (selected ? ' selected' : '') + '" data-date="' + ds + '"' + (disabled ? ' disabled' : '') + '>' + d + '</button>';
     }
@@ -758,20 +854,22 @@
     });
     body += '</select></label>';
 
-    body += '<div class="field">' + esc(tt.dateLabel) + calendarHtml() + '</div>';
+    body += '<div class="field">' + esc(tt.dateLabel) + '<div class="hint" style="margin-bottom:2px;">' + esc(tt.dateHint) + '</div>' + calendarHtml() + '</div>';
 
-    body += '<div class="field">' + esc(tt.timeLabel) + '<div class="hint" style="margin-bottom:2px;">' + esc(tt.timeHint) + '</div>';
+    var purpose = purposeOf(f);
+    body += '<div class="field">' + esc(tt.timeLabel) + '<div class="hint" style="margin-bottom:2px;">' + esc(purpose === 'procedure' ? tt.timeHintProcedure : tt.timeHintConsult) + '</div>';
     if (!f.date) {
       body += '<div class="hint">' + esc(tt.calPickFirst) + '</div>';
     } else {
       body += '<div class="slot-grid">';
-      var nowHour = f.date === todayISO() ? new Date().getHours() : -1;
-      getSlotsForDate(f.date).forEach(function (s) {
-        var full = bookedCount(s) >= SLOT_CAPACITY || parseInt(s, 10) <= nowHour;
+      var nowMin = f.date === todayISO() ? new Date().getHours() * 60 + new Date().getMinutes() : -1;
+      getSlotsForDate(f.date, purpose).forEach(function (s) {
+        var full = bookedCount(s) >= SLOT_CAPACITY || toMin(s) <= nowMin;
         var sel = f.time === s;
         body += '<button type="button" class="slot' + (sel ? ' selected' : '') + '" data-slot="' + s + '"' + (full ? ' disabled' : '') + '>' + s + (full ? '<br><small>' + esc(tt.slotFull) + '</small>' : '') + '</button>';
       });
       body += '</div>';
+      if (isLateConsult(f)) body += '<div class="hint" style="margin-top:8px;font-size:12px;">' + esc(tt.lateConsultNote) + '</div>';
     }
     body += '</div>';
 
@@ -789,6 +887,7 @@
       render();
     });
     app.querySelector('#cal-next').addEventListener('click', function () {
+      if (this.disabled) return;
       state.calendar.month++;
       if (state.calendar.month > 11) { state.calendar.month = 0; state.calendar.year++; }
       render();
@@ -907,11 +1006,14 @@
 
     body += '<div class="review-section"><div class="review-head"><span>' + esc(tt.stepVisit) + ' / ' + esc(tt.stepSchedule) + '</span><button type="button" data-edit="2">' + esc(tt.editLabel) + '</button></div><div class="summary">';
     body += reviewRow(tt.reviewVisit, f.visitType === 'first' ? tt.visitFirst : tt.visitReturning);
+    body += reviewRow(tt.reviewPurpose, purposeOf(f) === 'procedure' ? tt.purposeProcedure : tt.purposeConsult);
     body += reviewRow(tt.reviewService, tt.services[f.service] || f.service);
     body += reviewRow(tt.reviewDoctor, f.doctor ? f.doctor : tt.none);
     body += reviewRow(tt.reviewCompanion, tt.companion[f.companion] || f.companion);
     body += reviewRow(tt.reviewDateTime, formatDateDisplay(state.lang, f.date) + ' ' + f.time);
-    body += '</div></div>';
+    body += '</div>';
+    if (isLateConsult(f)) body += '<div class="hint" style="margin-top:6px;font-size:12px;">' + esc(tt.lateConsultNote) + '</div>';
+    body += '</div>';
 
     body += '<div class="review-section"><div class="review-head"><span>' + esc(tt.stepInfo) + '</span><button type="button" data-edit="3">' + esc(tt.editLabel) + '</button></div><div class="summary">';
     body += reviewRow(tt.reviewReferral, tt.referral[f.referral] || f.referral);
@@ -957,6 +1059,7 @@
       doctor: (f.doctor || '').trim(),
       companions: ko.companion[f.companion] || f.companion,
       visitType: f.visitType === 'first' ? '초진' : '재진',
+      purpose: purposeOf(f) === 'procedure' ? '시술' : '상담',
       referral: ko.referral[f.referral] || f.referral,
       birth: f.birth,
       gender: ko.gender[f.gender] || f.gender,
@@ -986,6 +1089,8 @@
           f.time = '';
           subscribeDate(f.date);
           state.bookStep = 2;
+        } else if (res && res.error === 'duplicate') {
+          state.error = tt.duplicateError;
         } else {
           state.error = tt.submitError;
         }
